@@ -7,15 +7,15 @@ function App() {
   const [newTodo, setNewTodo] = useState("");
 
   const handleAddTodo = (e) => {
-    e.preventDefault();
-    if (newTodo.trim() === "") return;
+    e.preventDefault();     // doesnt allow the page to be refreshed
+    if (newTodo.trim() === "") return;  // ignores empty input
 
-    setTodos([...todos, { id: Date.now(), text: newTodo }]);
-    setNewTodo("");
+    setTodos([...todos, { id: Date.now(), text: newTodo }]);    // adds new todo to the list
+    setNewTodo("");     // clears the input field after adding the todo
   };
 
   const handleDeleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));   // filters out the todo with the given id
   };
 
 
